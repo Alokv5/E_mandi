@@ -1,0 +1,21 @@
+
+{% extends 'admin_menu.html' %}
+{% block admin %}
+
+    <h1 style="background: azure;color: orange;text-align: center"> Welcome to Admin Home</h1>
+    <table align="center" border="2">
+        <tr><th>
+            <img src="{{ data.photo.url }}" width="100" height="100">
+        </th></tr>
+       <tr><th>Welcome Mr./Miss. {{ data.name }}</th>
+
+    {% if  message    %}
+        {% for  x in message %}
+
+   {{ x }}
+         {% endfor %}
+    {% endif %}
+</tr>
+
+</table>
+{% endblock %}

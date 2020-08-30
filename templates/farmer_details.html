@@ -1,0 +1,26 @@
+
+{% extends 'former_menu.html' %}
+
+{% block farmer %}
+    {% load static %}
+
+
+    <table align="center" border="2">
+    <tr>
+        <th>
+            Farmer Information
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <img src="{{ data.photo.url }}"width="100px" height="100" border="2">
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <h1> Welcome Mr./Miss.
+            {{ data.name }} </h1>
+        </th>
+    </tr>
+    </table>
+{% endblock %}

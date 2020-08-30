@@ -1,0 +1,33 @@
+{% extends 'admin_menu.html' %}
+
+{% block admin %}
+
+<table align="center" border="2">
+ <tr><th>Pending Applications</th></tr>
+
+ <tr>
+     <th>ID No.</th>
+     <th>Name</th>
+     <th>Contact</th>
+     <th>Email</th>
+     <th>GST</th>
+     <th>PHOTO</th>
+     <th>Company Name</th>
+     <th>Status</th>
+     {% for x in result %}
+         <tr>
+         <th>{{ x.lid }}</th>
+         <th>{{ x.name }}</th>
+         <th>{{ x.contact }}</th>
+         <th>{{ x.email }}</th>
+         <th>{{ x.gst }}</th>
+         <th>{{ x.firm }}</th>
+         <th>{{ x.status }}</th>
+         </tr>
+
+     {% endfor %}
+
+ </tr>
+</table>
+
+{% endblock %}

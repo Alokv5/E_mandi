@@ -1,0 +1,29 @@
+{% extends 'mar_menu.html' %}
+
+{% block mar %}
+    {% load static %}
+
+            <table align="center" border="2">
+            <tr>
+                <th colspan="5"> All Order</th>
+            </tr>
+            <tr>
+                <th>Order Id</th>
+                <th>Order date</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Photo</th>
+            </tr>
+            {% for x in data %}
+                <tr>
+                <th>{{ x.oid }}</th>
+                <th>{{ x.date }}</th>
+                <th>{{ x.Product.pname }}</th>
+                <th>{{ x.Product.price }}</th>
+                <th><img src="{{ x.Product.photo.url }}" width="90" height="90"></th>
+                </tr>
+
+            {% endfor %}
+            </table>
+
+{% endblock %}

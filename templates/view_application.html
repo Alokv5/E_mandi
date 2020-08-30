@@ -1,0 +1,55 @@
+{% extends 'admin_menu.html' %}
+
+{% block admin %}
+
+    <h1>Welcome </h1>
+   <table align="center" border="2">
+   <tr><th colspan="9" style="background: orange;color: white; font-size: 25px;">Apllication details</th></tr>
+   {% if message %}
+       <tr>
+       <th>{{ message }}</th>
+       </tr>
+   {% endif %}
+   <tr>
+
+   </tr>
+   <tr>
+
+       <th>Id No</th>
+       <th> Applicant Name</th>
+       <th>Contact</th>
+       <th>Email</th>
+       <th>GST NO.</th>
+       <th>Company Name</th>
+       <th>Photo</th>
+        <th>Accept</th>
+       <th>Reject</th>
+
+   </tr> <tr>
+    {% for x in data %}
+        <th>{{ x.lid }}</th>
+        <th>{{ x.name }}</th>
+        <th>{{ x.contact }}</th>
+        <th>{{ x.email }}</th>
+        <th>{{ x.gst }}</th>
+        <th>{{ x.firm }}</th>
+        <th><img src="{{ x.photo.url }}" width="80" height="80"></th>
+        <th>
+              <form action="{% url 'admin_new_lic' %}" method="post">
+                  {% csrf_token %}
+              <input type="hidden" value="{{ x.lid }}" name="lid">
+              <input type="hidden" value="{{ request.session.user }}" name="id">
+
+              <button type="submit">Accept</button>
+                  </form>
+
+        </th>
+
+
+        <th><a href="{% url 'reject_app' %}?idno={{ x.lid }}">Reject</a></th>
+
+        </tr>
+    {% endfor %}
+   </table>
+
+{% endblock %}

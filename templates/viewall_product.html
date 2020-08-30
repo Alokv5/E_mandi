@@ -1,0 +1,37 @@
+{% extends 'former_menu.html' %}
+
+{% block farmer %}
+{% load static %}
+
+
+    <table align="center" border="2">
+    <tr>
+        <th colspan="6" st> <h1>
+            All Products Details </h1>
+        </th>
+    </tr>
+      <tr>
+         <th>Id_no</th>
+         <th>Product Name</th>
+         <th>Product Price</th>
+         <th>Product Quantity</th>
+         <th>Product Images</th>
+         <th> Date Of Registration</th>
+      {% for x in data %}
+          <tr>
+          <th>{{ x.fid }}</th>
+          <th>{{ x.pname }}</th>
+          <th>{{ x.price }}</th>
+          <th>{{ x.quantity }}</th>
+          <th><img src="{{ x.photo.url }}" width="100" height="100"></th>
+          <th>{{ x.date_of_register }}</th>
+
+
+          </tr>
+     {% endfor %}
+
+    </table>
+
+
+{% endblock %}
+

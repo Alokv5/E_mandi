@@ -1,0 +1,34 @@
+{% extends 'common.html' %}
+
+{% block emandi %}
+    {% load static %}
+
+
+    <h1>Welcom to</h1>
+     <table align="center" border="2" width="550">
+     {% for x in data %}
+     <tr>
+         <th colspan="2">Former Registration Details</th>
+     </tr>
+       <tr>
+           <th>Name{{ x.name }}</th>
+           <th rowspan="5">{{ x.photo.url }}</th>
+       </tr>
+     <tr>
+         <th>Contact{{ x.contact }}</th>
+     </tr>
+     <tr>
+         <th>Email{{ x.email }}</th>
+     </tr>
+     <tr>
+         <th>Date{{ x.date_of_register }}</th>
+     </tr>
+     <tr>
+         <th>Password{{ x.password }}</th>
+     </tr>
+     {% endfor %}
+     </tr>
+ </table>
+
+
+{% endblock %}

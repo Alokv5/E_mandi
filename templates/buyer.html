@@ -1,0 +1,55 @@
+{% extends 'common.html' %}
+
+{% block emandi %}
+    {% load static %}
+    <form action="{% url 'save_farmer' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table align="center" border="2" width="550">
+     <tr><th colspan="2" style="text-align: center;font-size: 20px">Former Registration</th>
+     </tr>
+       <tr><th><input type="text" placeholder="Name" required name="t1" size="30"></th>
+       </tr>
+     <tr><th><input type="number" placeholder="Contact" required name="t2" size="30"></th>
+     </tr>
+        <tr><th><input type="email" placeholder="Email" required name="t3" size="30"></th></tr>
+        <tr>
+        <th><input type="file" required name="t4"></th>
+     </tr>
+     <tr>
+         <th><input type="date"  required name="t5" size="30"></th>
+     </tr>
+     <tr>
+         <th><input type="password" placeholder="Password" required name="t6" size="30"></th>
+     </tr>
+     <tr>
+         <th colspan="2" style="text-align: center"><button type="submit">Register</button></th>
+     </tr>
+ </table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

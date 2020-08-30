@@ -1,0 +1,50 @@
+{% extends 'common.html' %}
+
+{% block emandi %}
+
+    <form action="{% url 'save_license' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table align="center" border="2">
+    <tr>
+        <th colspan="2">Application For New License</th>
+    </tr>
+    <tr><th><input type="text" placeholder="Name" required name="t1" size="35"></th>
+        <th><input type="number" placeholder="Contact" required name="t2"></th>
+    </tr>
+    <tr>
+        <th><input type="email" placeholder="Email Id" required name="t3" size="35"></th>
+        <th><input type="text" placeholder="GST" required name="t4" size="35" max="15"></th>
+    </tr>
+    <tr>
+        <th><input type="text" placeholder="Company" required name="t5" size="35"></th>
+        <th> Applicant Photo:<input type="file" required name="t6">
+    </tr>
+    <tr>
+        <th colspan="2">
+       <button type="submit">Save</button>
+        </th>
+    </tr>
+    <tr> <th colspan="6">
+        {% if  message %}
+            {% for x in message %}
+            {{ x }}
+
+            {% endfor %}
+        {% endif %}
+        </th></tr>
+
+    </table>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
